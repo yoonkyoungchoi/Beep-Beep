@@ -177,10 +177,11 @@ function strEncryption(sentence) {  //암호화 함수
         playFair.push(tmpArr);
         
     }
-
+    document.write('<center>');
     for(var i=0; i<playFair.length; i++) {
         document.write(playFair[i][0] + ""+ playFair[i][1] + " ");
     }
+    document.write('</center>');
 
     for(var i=0; i<playFair.length; i++) {
         var tmpArr2 = new Array(2);
