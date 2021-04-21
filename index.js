@@ -107,17 +107,17 @@ function strDecryption(key, encryption, zCheck) {   //복호화 함수
             }
         }
         
-        if(x1==x2) 
+        if(x1==x2)//행이 같은 경우 각각 바로 아래열 대입
         {
             tmpArr[0] = alphabetBoard[x1][(y1+4)%5];
             tmpArr[1] = alphabetBoard[x2][(y2+4)%5];
         }
-        else if(y1==y2) 
+        else if(y1==y2) //열이 같은 경우 각각 바로 옆 열 대입
         {
             tmpArr[0] = alphabetBoard[(x1+4)%5][y1];
             tmpArr[1] = alphabetBoard[(x2+4)%5][y2];
         }
-        else
+        else//행, 열 다른경우 각자 대각선에 있는 곳.
         {
             tmpArr[0] = alphabetBoard[x2][y1];
             tmpArr[1] = alphabetBoard[x1][y2];
@@ -126,22 +126,24 @@ function strDecryption(key, encryption, zCheck) {   //복호화 함수
         decPlayFair.push(tmpArr);
     }
    
-    for(var i = 0 ; i < decPlayFair.length ; i++) 
+    for(var i = 0 ; i < decPlayFair.length ; i++) //중복 문자열 돌려놓음
     {
-        if(i!=decPlayFair.length-1 && decPlayFair[i][1]=='x'    
+        if(i!=decPlayFair.length-1 && decPlayFair[i][1]=='x'  //만약 x가 있다면  
                 && decPlayFair[i][0]==decPlayFair[i][0])
         {	
-            decStr += decPlayFair[i][0];   
+            decStr += decPlayFair[i][0];    //x데거 후 추가
         }
         else
         {
+            // 아닐 시 원상복구
             decStr += decPlayFair[i][0] + "" + decPlayFair[i][1];   
         }
     }
     
     for(var i = 0 ; i < zCheck.length ; i++ )
     {
-        if( zCheck.charAt(i) == '1' )   
+        if( zCheck.charAt(i) == '1' ) //z가 존재하면 
+           //다시 추가해서 돌려줌
             decStr = decStr.substring(0,i)+'z'+decStr.substring(i+1,decStr.length); 
     }
     
@@ -157,19 +159,18 @@ function strEncryption(sentence) {  //암호화 함수
     var x1 = 0, x2 = 0, y1 = 0, y2 = 0;
     var encStr = ""; 
 
-    for(var i=0; i<sentence.length; i+=2) {
+    for(var i=0; i<sentence.length; i+=2) { //문자를 2개씩 묶기위해 2씩 증가
         var tmpArr = new Array(2);
         tmpArr[0] = sentence.charAt(i);
-        if(sentence.charAt(i) == sentence.charAt(i+1)) { 
-            tmpArr[1] = 'x';
-            i--;
+        if(sentence.charAt(i) == sentence.charAt(i+1)) { //첫 문자와 두번째 문자가 같으면 
+            tmpArr[1] = 'x'; // 두번째 문자를 x로 변경
+            i--; // i를 1 감소하면서 다음 문자를 다시 비교함
         }else{
-            tmpArr[1] = sentence.charAt(i+1); 
+            tmpArr[1] = sentence.charAt(i+1);  // 같지 않으면 그대로
         }
 
-        
-        if(i == sentence.length-1) {  
-            tmpArr[1] = 'x';  
+        if(i == sentence.length-1) {  // i길이가 홀수이면
+            tmpArr[1] = 'x';   //x로 설정
             oddFlag = true; 
         }
 
