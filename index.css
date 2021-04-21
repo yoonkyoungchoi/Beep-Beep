@@ -1,0 +1,28 @@
+.textbox input[type="text"]{ 
+    width: 50%; 
+    height: auto; 
+    line-height : normal; 
+    padding: .8em .5em;  
+    font-family: inherit; 
+    border: 1px solid #999; border-radius: 0; 
+    outline-style: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; appearance: none; 
+}
+
+.textbox input[type="submit"]{
+    background-color: blueviolet;
+    border: 1px solid rgb(255, 255, 255); border-radius: 0;
+    padding: .8em .5em;
+    width: 10%;
+}
+
+body{
+    background-color: rgb(87, 53, 238);
+    text-align: center;;
+}
+
+table, th, td, tbody{
+    width: 300px;
+    height: 300px;
+}
