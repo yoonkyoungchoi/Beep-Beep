@@ -7,13 +7,12 @@ for (var i = 0; i < alphabetBoard.length; i++){
 // 홀수일 때 x추가 여부를 확인하기 위한 변수
 var oddFlag = false;
 var decdec = "";
+var zCheck = "";
+var decryption;
+var encryption;           
+var blankCheck = "";
 
 function main(){
-    var zCheck = "";
-    var decryption;
-    var encryption;           
-    var blankCheck = "";
-
     var key = document.getElementById('key').value; //입력받은 key값 가져옴
     var str = document.getElementById('str').value; //입력받은 str값 가져옴
 
@@ -56,6 +55,39 @@ function main(){
         if (encryption.charAt(i) == ' ') //공백제거
             encryption = encryption.substring(0, i) + encryption.substring(i + 1, encryption.length);
     }
+}
+
+function main2(){
+    var key = document.getElementById('key').value; //입력받은 key값 가져옴
+    var str = document.getElementById('str').value; //입력받은 str값 가져옴
+
+    document.write('<center>');
+    document.write("암호화 할 key : ", key);
+    document.write('<br>');
+    document.write("암호화 할 문자열 : ", str);
+    document.write('</center>');
+
+    //암호판 생성
+    setBoard(key);
+
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) == ' ') //공백제거
+        {
+            str = str.substring(0, i) + str.substring(i + 1, str.length); // 공백제거 후 다시 문장 이어붙임
+            blankCheck += 10;   // 공백처리 후 10 증가
+        }
+        else {
+            blankCheck += 0; // 공백이 없을 시 증가 x
+        }
+        if (str.charAt(i) == 'z') //z를 q로 바꿔줘서 처리함.
+        {
+            str = str.substring(0, i) + 'q' + str.substring(i + 1, str.length); 
+            zCheck += 1;
+        }
+        else {
+            zCheck += 0;
+        }
+    }
 
     // 복호화 함수
     decryption = strDecryption(key, encryption, zCheck);
@@ -70,7 +102,6 @@ function main(){
     //출력문
     document.write("<br>복호화된 문자열 : " + decryption);
     document.write('</center>');
-
 }
     
 function strDecryption(key, encryption, zCheck) {   //복호화 함수
