@@ -89,19 +89,30 @@ function main2(){
         }
     }
 
+    // 암호화 함수
+    encryption = strEncryption(str);
+
+    for (var i = 0; i < encryption.length; i++) {
+        if (encryption.charAt(i) == ' ') //공백제거
+            encryption = encryption.substring(0, i) + encryption.substring(i + 1, encryption.length);
+    }
+
     // 복호화 함수
     decryption = strDecryption(key, encryption, zCheck);
-
-    for (var i = 0; i < decryption.length; i++) {
-        if (blankCheck.charAt(i) == '1') {
-            //공백이 존재했다면 다시 추가함
-            decryption = decryption.substring(0, i) + " " + decryption.substring(i, decryption.length);
-        }
-    }
     
+    for (var i = 0; i < decryption.length; i++) {
+            if (blankCheck.charAt(i) == '1') {
+                //공백이 존재했다면 다시 추가함
+                decryption = decryption.substring(0, i) + " " + decryption.substring(i, decryption.length);
+            }
+        }
+
     //출력문
+    document.write('<center>'); 
     document.write("<br>복호화된 문자열 : " + decryption);
     document.write('</center>');
+
+    
 }
     
 function strDecryption(key, encryption, zCheck) {   //복호화 함수
