@@ -8,12 +8,14 @@
     outline-style: none;
     -webkit-appearance: none; 
     -moz-appearance: none; appearance: none; 
+    color: black;
     border-radius: 12px;
 }
 
-.textbox input[type="submit"]{
-    background-color: blueviolet;
-    border: 1px solid rgb(255, 255, 255); border-radius: 0;
+.textbox input[type="button"]{
+    color: rgb(255, 255, 255);
+    background-color: rgb(128, 0, 0);
+    border: 1px solid rgb(0, 0, 0); border-radius: 0;
     padding: .8em .5em;
     width: 10%;
     border-radius: 12px;
@@ -21,7 +23,7 @@
 
 body{
     font-size: 20px;
-    background-color: rgb(87, 53, 238);
+    background-color: rgb(255, 137, 116);
     text-align: center;;
 }
 
