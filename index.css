@@ -27,3 +27,7 @@ table, th, td, tbody{
     width: 300px;
     height: 300px;
 }
+
+submit{
+    border-radius: 12px;
+}
