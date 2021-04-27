@@ -13,8 +13,24 @@ var encryption;
 var blankCheck = "";
 
 function main(){
+    var eng = /[a-zA-Z]/;
+
     var key = document.getElementById('key').value; //입력받은 key값 가져옴
     var str = document.getElementById('str').value; //입력받은 str값 가져옴
+
+    for(var i = 0; i < key.length; i++){
+        if(eng.test(key[i]) == false && key[i] != " "){
+            alert('영어만 입력하세요');
+            return;
+        }
+    }
+    
+    for(var i = 0; i < str.length; i++){
+        if(eng.test(str[i]) == false && str[i] != " "){
+            alert('영어만 입력하세요');
+            return;
+        }
+    }
 
     document.write('<center>');
     document.write("암호화 할 key : ", key);
@@ -58,15 +74,30 @@ function main(){
 }
 
 function main2(){
+    var eng = /[a-zA-Z]/;
+
     var key = document.getElementById('key').value; //입력받은 key값 가져옴
     var str = document.getElementById('str').value; //입력받은 str값 가져옴
+
+    for(var i = 0; i < key.length; i++){
+        if(eng.test(key[i]) == false){
+            alert('영어만 입력하세요');
+            return;
+        }
+    }
+    
+    for(var i = 0; i < str.length; i++){
+        if(eng.test(str[i]) == false){
+            alert('영어만 입력하세요');
+            return;
+        }
+    }
 
     document.write('<center>');
     document.write("암호화 할 key : ", key);
     document.write('<br>');
     document.write("암호화 할 문자열 : ", str);
     document.write('</center>');
-
     //암호판 생성
     setBoard(key);
 
