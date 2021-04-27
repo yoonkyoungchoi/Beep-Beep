@@ -19,14 +19,14 @@ function main(){
     var str = document.getElementById('str').value; //입력받은 str값 가져옴
 
     for(var i = 0; i < key.length; i++){
-        if(eng.test(key[i]) == false && key[i] != " "){
+        if(eng.test(key[i]) == false && key[i] != " " && isNaN(key) == true){
             alert('영어만 입력하세요');
             return;
         }
     }
     
     for(var i = 0; i < str.length; i++){
-        if(eng.test(str[i]) == false && str[i] != " "){
+        if(eng.test(str[i]) == false && str[i] != " " && isNaN(str) == true){
             alert('영어만 입력하세요');
             return;
         }
@@ -80,14 +80,14 @@ function main2(){
     var str = document.getElementById('str').value; //입력받은 str값 가져옴
 
     for(var i = 0; i < key.length; i++){
-        if(eng.test(key[i]) == false){
+        if(eng.test(key[i]) == false && key[i] != " " && isNaN(key) == true){
             alert('영어만 입력하세요');
             return;
         }
     }
     
     for(var i = 0; i < str.length; i++){
-        if(eng.test(str[i]) == false){
+        if(eng.test(str[i]) == false && str[i] != " " && isNaN(str) == true){
             alert('영어만 입력하세요');
             return;
         }
