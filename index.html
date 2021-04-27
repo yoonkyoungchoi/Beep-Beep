@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" defer src="index.js"></script>
     <link rel="stylesheet" href="index.css">
     <title>삐릭삐릭 알 수 없음</title>
 </head>
@@ -16,13 +16,12 @@
         <img src="main.jpg" width="200" height="200"><br><br>
         자신만의 비밀 암호를 만들어보세요!<br><br>
         짜증나는 사람에게 영어암호를 퍼부어보세요!!!<br><br>
-        ※ 주의 : 영어로 작성할 것※ <br><br>
         <label for="key">암호화 할 Key</label><br><br>
-        <input id='key' type="text"><br><br>
+        <input id='key' type="text" ><br><br>
         <label for="str"> 암호화 할 문장</label><br><br>
         <input id = 'str' type="text"><br><br>
-        <input type="submit" value="암호화 하기" onclick="main()">
-        <input type="submit" value="복호화 하기" onclick="main2()">
+        <input type="button" value="암호화 하기" onclick="main()">
+        <input type="button" value="복호화 하기" onclick="main2()">
     </div>
     </center>
 </body>
