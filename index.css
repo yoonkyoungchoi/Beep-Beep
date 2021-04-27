@@ -8,6 +8,7 @@
     outline-style: none;
     -webkit-appearance: none; 
     -moz-appearance: none; appearance: none; 
+    border-radius: 12px;
 }
 
 .textbox input[type="submit"]{
@@ -15,6 +16,7 @@
     border: 1px solid rgb(255, 255, 255); border-radius: 0;
     padding: .8em .5em;
     width: 10%;
+    border-radius: 12px;
 }
 
 body{
@@ -26,8 +28,4 @@ body{
 table, th, td, tbody{
     width: 300px;
     height: 300px;
-}
-
-submit{
-    border-radius: 12px;
 }
