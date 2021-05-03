@@ -9,7 +9,7 @@
     -webkit-appearance: none; 
     -moz-appearance: none; appearance: none; 
     color: black;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
 .textbox input[type="button"]{
@@ -22,7 +22,7 @@
 }
 
 body{
-    font-size: 22px;
+    font-size: 20px;
     background-color: rgb(255, 137, 116);
     text-align: center;;
 }
